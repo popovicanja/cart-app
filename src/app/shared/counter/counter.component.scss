@@ -1,0 +1,19 @@
+.quantity-field {
+  width: 64px;
+  padding: 8px;
+  border: 1px solid #efefef;
+
+  .counter-value {
+    font-size: 14px;
+    color: dimgray;
+  }
+
+  .actions {
+    i {
+      color: #505050;
+      font-size: 14px;
+      background: #f1f1f1;
+      padding: 0 4px;
+    }
+  }
+}

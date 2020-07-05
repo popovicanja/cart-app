@@ -1,0 +1,80 @@
+<div>
+
+  <div>
+    <div class="subtitle mb-4">Shipping info</div>
+
+    <div class="info-box mb-3 d-flex flex-column">
+      <span class="value">{{shippingValue?.firstName}}</span>
+      <span class="label">First name</span>
+    </div>
+
+    <div class="info-box mb-3 d-flex flex-column">
+      <span class="value">{{shippingValue?.lastName}}</span>
+      <span class="label">Last name</span>
+    </div>
+
+    <div class="info-box mb-3 d-flex flex-column">
+      <span class="value">{{shippingValue?.address}}</span>
+      <span class="label">Address</span>
+    </div>
+
+    <div class="info-box mb-3 d-flex flex-column">
+      <span class="value">{{shippingValue?.phoneNumber}}</span>
+      <span class="label">Phone number</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div>
+    <div class="subtitle mb-4">Payment info</div>
+
+    <div class="info-box mb-3 d-flex flex-column">
+      <span class="value">{{paymentValue?.accountOwner}}</span>
+      <span class="label">Account owner</span>
+    </div>
+
+    <div class="info-box mb-3 d-flex flex-column">
+      <span class="value">{{paymentValue?.iBan}}</span>
+      <span class="label">IBAN</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div>
+    <div class="subtitle mb-4">Cart info</div>
+
+    <div class="cart-preview">
+      <div class="cart-header d-flex justify-content-between align-items-center">
+        <span class="header-column product-label">Product info</span>
+        <span class="header-column">Quantity</span>
+        <span class="header-column total-label">Total</span>
+      </div>
+      <div class="cart-items">
+        <ca-cart-items [items]="items"
+                        [totalSum]="totalSum"
+                        (remove)="removeItem($event)"
+                        (quantityChange)="onQuantityChange($event)">
+        </ca-cart-items>
+      </div>
+      <div class="total-info d-flex align-items-center justify-content-between">
+        <span class="label">Total</span>
+        <span class="value">{{totalSum | customCurrency}}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="actions mt-4">
+    <button type="button"
+            class="btn btn-success checkout-btn text-uppercase w-100"
+            ngbAutofocus
+            (click)="confirm()"
+            [disabled]="!items || items.length === 0">
+      Confirm
+    </button>
+  </div>
+
+
+</div>

@@ -1,0 +1,13 @@
+<div *ngFor="let item of items" class="item d-flex align-items-center justify-content-between mb-3">
+  <div class="item-info d-flex flex-column">
+    <span class="name mb-2">{{item.name}}</span>
+    <span class="price mb-2">{{item.price | customCurrency}}</span>
+    <span class="remove-label" (click)="onRemove(item.id)">Remove</span>
+  </div>
+  <div>
+    <ca-counter [counter]="item.quantity" (changeCounter)="onQuantityChange(item, $event)"></ca-counter>
+  </div>
+  <div class="price-with-quantity">{{item.quantity * item.price | customCurrency}}</div>
+</div>
+
+<div *ngIf="!items || items.length === 0" class="empty-cart-info">Your cart is empty.</div>

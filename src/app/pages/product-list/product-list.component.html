@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div class="header d-flex justify-content-between align-items-center">
+    <div class="title">Cart app</div>
+    <div class="cart-info" id="t-cart-action" (click)="openCartModal()">
+      <span class="label">Cart</span>
+      <i class="fas fa-shopping-cart"></i>
+      <span class="badge">{{cartItemsCounter}}</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <form>
+      <div class="form-group form-inline">
+        <input class="form-control w-100" type="text" [formControl]="searchTerm" placeholder="Search by product name"/>
+      </div>
+    </form>
+
+    <table class="table mt-4">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">
+          Price
+          <i class="fas fa-arrow-down sort-icon"
+             [ngClass]="{'rotate-arrow': isAsc}"
+             (click)="onPriceSort()"></i>
+        </th>
+        <th scope="col">Quantity</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts; let i = index">
+        <td class="number">{{ i + 1 }}</td>
+        <td>{{product.name}}</td>
+        <td id="t-price">{{product.price | customCurrency }}</td>
+        <td id="t-quantity">
+          <ca-counter [counter]="product.quantity" (changeCounter)="onQuantityChange(product, $event)"></ca-counter>
+        </td>
+        <td class="text-right">
+          <button type="button" class="btn btn-outline-dark btn-add-to-cart" (click)="addToCart(product)">Add to cart</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div *ngIf="!products || products.length === 0" class="empty-cart-info">Product list is empty.</div>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="header">
+    <div class="title">Welcome to checkout process</div>
+  </div>
+
+  <div class="content">
+
+    <ca-stepper [steps]="checkoutSteps" (stepChange)="onStepChange($event)"></ca-stepper>
+
+    <div class="step-content mt-5">
+
+      <div class="step-title mb-4">{{activeStepName}}</div>
+
+      <div *ngIf="activeStepId === shippingStep">
+        <ca-shipping-form (completeForm)="onShippingFormCompleted($event)"
+                          (invalidSubmitAttempt)="onInvalidSubmitAttempt(shippingStep)"
+                          [completedValue]="shippingValue"></ca-shipping-form>
+      </div>
+
+      <div *ngIf="activeStepId === paymentStep">
+        <ca-payment-form (completeForm)="onPaymentFormCompleted($event)"
+                         (invalidSubmitAttempt)="onInvalidSubmitAttempt(paymentStep)"
+                         [completedValue]="paymentValue"></ca-payment-form>
+      </div>
+
+      <div *ngIf="activeStepId === checkoutOverviewStep">
+        <ca-checkout-overview [shippingValue]="shippingValue"
+                               [paymentValue]="paymentValue">
+        </ca-checkout-overview>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="accountOwner">Account owner *</label>
+    <input type="text" class="form-control" id="accountOwner" formControlName="accountOwner" placeholder="Enter account owner name" [ngClass]="{ 'is-invalid': submitted && controls.accountOwner.errors }"/>
+    <div class="invalid-feedback" *ngIf="!controls.accountOwner.value">This field is required</div>
+    <div class="invalid-feedback" *ngIf="controls.accountOwner.value">Text can only contains letters a-z & A-Z</div>
+  </div>
+
+  <div class="form-group">
+    <label for="iBan">IBAN *</label>
+    <input type="text" class="form-control" id="iBan" formControlName="iBan" placeholder="Enter IBAN" [ngClass]="{ 'is-invalid': submitted && controls.iBan.errors }">
+    <div class="invalid-feedback" *ngIf="!controls.iBan.value">This field is required</div>
+    <div class="invalid-feedback" *ngIf="controls.iBan.value">IBAN format is not valid</div>
+  </div>
+
+  <div class="actions d-flex justify-content-end">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>

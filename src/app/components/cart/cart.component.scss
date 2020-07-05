@@ -1,0 +1,32 @@
+.modal-title {
+  .title {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .5px;
+  }
+  i {
+    font-size: 20px;
+  }
+}
+
+.modal-body {
+  padding: 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.modal-footer {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-sizing: border-box;
+  .total-info {
+    padding: 8px 1rem;
+    border: 1px solid #e8e8e8;
+  }
+  .checkout-btn {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 16px 1rem;
+    width: calc(100% - 2rem);
+  }
+}
+

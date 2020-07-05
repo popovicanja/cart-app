@@ -1,0 +1,50 @@
+.subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #09a4d4;
+}
+.info-box {
+  .value {
+    line-height: 22px;
+  }
+  .label {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: gray;
+  }
+}
+.cart-header {
+  background: #f4f4f4;
+  border-bottom: 1px solid #c6c6c6;
+  padding: 8px 1rem;
+  .header-column {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+  }
+  .product-label {
+    width: 40%;
+  }
+  .total-label {
+    width: 30%;
+    text-align: right;
+  }
+}
+.cart-items {
+  max-height: 280px;
+  overflow-y: auto;
+}
+.total-info {
+  padding: 8px 1rem;
+  background: #f4f4f4;
+  border-top: 1px solid #c6c6c6;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: #f1efef;
+  margin: 24px 0;
+}

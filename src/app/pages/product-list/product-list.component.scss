@@ -1,0 +1,68 @@
+.rotate-arrow {
+  transform: rotate(180deg);
+}
+
+.header {
+  .cart-info {
+    cursor: pointer;
+    .label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: dimgray;
+      padding-right: 4px;
+    }
+    i {
+
+    }
+    .badge {
+      position: relative;
+      bottom: 8px;
+      left: 4px;
+      background: #09a4d4;
+      color: white;
+    }
+    &:hover {
+      .label {
+        color: gray;
+      }
+      i {
+        color: gray;
+      }
+    }
+  }
+}
+.content {
+  table {
+    thead tr {
+      background: rgb(247, 248, 249);
+    }
+    th, td {
+      vertical-align: middle;
+    }
+
+    th {
+      border-bottom: none;
+      color: dimgray;
+      font-weight: 500;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .sort-icon {
+      cursor: pointer;
+    }
+
+    td.number {
+      font-size: 13px;
+      color: dimgray;
+    }
+
+    .btn-add-to-cart {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}

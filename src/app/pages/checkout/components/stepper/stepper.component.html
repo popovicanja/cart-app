@@ -1,0 +1,16 @@
+<div class="stepper">
+  <div class="steps d-flex justify-content-between align-items-center">
+    <div class="step d-flex align-items-center"
+         *ngFor="let step of steps;let index = index"
+         (click)="switchToStep(step.id)"
+         [ngClass]="{'completed': step.isCompleted, 'active': index === activeStepIndex && !step.isCompleted}">
+      <div class="circle mr-2 d-flex align-items-center justify-content-center">
+        <span class="step-number" *ngIf="!step.isCompleted && index !== activeStepIndex">{{index + 1}}</span>
+        <i class="fas fa-pen pen-icon" *ngIf="!step.isCompleted && index === activeStepIndex"></i>
+        <i class="fas fa-check check-icon" *ngIf="step.isCompleted"></i>
+      </div>
+      <span class="label">{{step.name}}</span>
+    </div>
+  </div>
+  <div class="divider"></div>
+</div>
